@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.nosheep.assets.AssetLoader;
 import com.nosheep.main.rpgGame;
 import com.nosheep.network.Database;
-import com.nosheep.network.Register;
 import com.nosheep.player.Player;
 import com.nosheep.tools.Button;
 import com.nosheep.tools.Input;
@@ -25,7 +24,6 @@ public class Menu extends MainMenu {
 	public String ip;
 	private boolean typingEmail = true;
 	private Button login;
-	private Button register;
 	
 	private Database db;
 
@@ -36,27 +34,18 @@ public class Menu extends MainMenu {
 	
 	public Menu(){
 		login = new Button("Login", 550, 10, 300, 70, false);
-		register = new Button("Register", 550, 110, 300, 70, false);
 		play = new Button("Play", 100, 100, 300, 70, false);
 	}
 	
 	private void checkClicked(){
-		
 		if(login.clicked()){
 			login();
 		}
-		if(register.clicked()){
-			register();
-		}
-		
 	}
 
 	private void login(){
 		rpgGame.stop(AssetLoader.intro);
 		db = new Database(this, email, password);
-	}
-	private void register(){
-		new Register();
 	}
 	
 	private void checkActiveInput(){
@@ -76,13 +65,13 @@ public class Menu extends MainMenu {
 		if(typingEmail){
 			if(input.checkRemove() && !email.isEmpty())
 				email = email.substring(0, email.length() - 1);
-			if(input.listen() != '´')
+			if(input.listen() != 'ï¿½')
 				email += input.listen();
 		}
 		else{
 			if(input.checkRemove() && !password.isEmpty())
 				password = password.substring(0, password.length() - 1);
-			if(input.listen() != '´')
+			if(input.listen() != 'ï¿½')
 				password += input.listen();
 		}
 			
@@ -126,7 +115,6 @@ public class Menu extends MainMenu {
 		}
 		
 		login.render(batch);
-		register.render(batch);
 	}
 	public void sRenderFill(ShapeRenderer render){
 		render.setColor(Color.BLACK);
