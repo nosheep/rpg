@@ -12,7 +12,7 @@ import com.nosheep.player.Player;
 import com.nosheep.tools.Button;
 import com.nosheep.tools.Input;
 
-public class Menu extends MainMenu {
+public class Menu {
 
 	@SuppressWarnings("unused")
 	private Button play;
@@ -65,13 +65,13 @@ public class Menu extends MainMenu {
 		if(typingEmail){
 			if(input.checkRemove() && !email.isEmpty())
 				email = email.substring(0, email.length() - 1);
-			if(input.listen() != 'ï¿½')
+			if(input.listen() != '´')
 				email += input.listen();
 		}
 		else{
 			if(input.checkRemove() && !password.isEmpty())
 				password = password.substring(0, password.length() - 1);
-			if(input.listen() != 'ï¿½')
+			if(input.listen() != '´')
 				password += input.listen();
 		}
 			

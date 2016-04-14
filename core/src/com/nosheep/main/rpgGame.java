@@ -34,7 +34,6 @@ import com.nosheep.items.KingBatBow;
 import com.nosheep.items.KingBatStaff;
 import com.nosheep.items.KingBatSword;
 import com.nosheep.items.LavaCape;
-import com.nosheep.mainMenu.MainMenu;
 import com.nosheep.mainMenu.Menu;
 import com.nosheep.map.BatCave;
 import com.nosheep.map.CrazyStumps;
@@ -72,7 +71,7 @@ public class rpgGame extends ApplicationAdapter {
 	private Database db;
 
 	// MAP //
-	private List<MainMenu> mm = new ArrayList<MainMenu>();
+	private List<Menu> mm = new ArrayList<Menu>();
 	public static byte menuIndex;
 	public static List<Map> map;
 	public static byte mapIndex;
